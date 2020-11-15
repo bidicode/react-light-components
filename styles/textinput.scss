@@ -1,0 +1,30 @@
+@import "./themes/default/index.scss";
+
+.rlight-textinput {
+  background: $rlight-textinput-background;
+  height: 40px;
+  width: 100%;
+  outline: none;
+  text-align: left;
+  align-content: center;
+  border: 2px solid $rlight-textinput-border;
+  border-radius: 3px;
+  padding: 0em .5em;
+
+  input:not([disabled]):hover {
+    background: $rlight-textinput-hover;
+  }
+  
+  input:not([disabled]):focus {
+    background: $rlight-textinput-focus;
+  }
+
+  input:disabled {
+    opacity: 0.5;
+  }  
+}
+
+.rlight-textinput:focus {
+  border-color: $rlight-textinput-border-color;
+}
+

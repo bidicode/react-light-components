@@ -1,0 +1,16 @@
+@import "./themes/default/index.scss";
+
+.rlight-title {
+  padding: 12px 5px 5px 5px;
+  min-height: 35px;
+}
+
+.rlight-is-required-border {
+  border: 2px solid $rlight-required-color;
+  border-radius: 3px;
+}
+
+.rlight-is-required {
+  color: $rlight-required-color;
+  margin-left: 0.15em;
+}

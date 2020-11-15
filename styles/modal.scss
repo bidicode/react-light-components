@@ -1,0 +1,40 @@
+@import "./themes/default/index.scss";
+
+.rlight-modal-body {
+  display: block;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: $rlight-modal-body-background-color;
+  background-color: $rlight-modal-body-background-color-a;
+}
+
+.rlight-modal-content {
+  background-color: $rlight-modal-content-background-color;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid $rlight-modal-content-border-color;
+  border-radius: 5px;
+  width: 66.66666%;
+}
+
+.rlight-modal-content-small {
+  width: 33.33333%
+}
+
+.rlight-modal-content-medium {
+  width: 66.66666%
+}
+
+.rlight-modal-content-large {
+  width: 93.33333%
+}
+
+.rlight-modal-content-full {
+  width: 100%
+}

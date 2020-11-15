@@ -1,0 +1,19 @@
+@import "./colors.scss";
+
+.rlight-textinput {
+  background: $rlight-textinput-background !important;
+  border: 2px solid $rlight-textinput-border !important;
+
+  input:not([disabled]):hover {
+    background: $rlight-textinput-hover !important;
+  }
+  
+  input:not([disabled]):focus {
+    background: $rlight-textinput-focus !important;
+  }
+}
+
+.rlight-textinput:focus {
+  border-color: $rlight-textinput-border-color !important;
+}
+

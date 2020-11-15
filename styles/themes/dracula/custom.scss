@@ -1,0 +1,31 @@
+@import './fonts/AbrilFatface-Regular.ttf';
+
+$background: #383a59;
+$textColor: #f2f2f2;
+$purple: #bd93f9;
+
+.rlight-theme-dracula {
+  background: $background;
+  font-family: Abril;
+
+  h1 {
+    color: $purple;
+    font-family: Abril;
+  }
+  
+  div {
+    color: $textColor;
+    font-family: Abril;
+  }
+  
+  input {
+    color: $textColor;
+    font-family: Abril;
+  }
+  
+  .rlight-title {
+    color: $textColor;
+    font-family: Abril;
+  }
+}
+

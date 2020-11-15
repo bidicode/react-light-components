@@ -1,0 +1,51 @@
+@import "./colors.scss";
+
+.rlight-btn-body {
+  color: $rlight-btn-body-color !important;
+  background: $rlight-btn-body-background !important;
+}
+
+.rlight-btn-body:focus {
+  box-shadow: 0 0 0 1pt $rlight-btn-body-focus-box-shadow !important;
+}
+
+.rlight-btn-body:disabled {
+  background: $rlight-btn-body-disabled-background !important;
+}
+
+.rlight-btn-body:not(:disabled):hover {
+  background: $rlight-btn-body-not-disabled-hover-background !important;
+}
+
+.rlight-btn-body-secondary:disabled {
+  background: $rlight-btn-body-secondary-disabled-background !important;
+  color: $rlight-btn-body-secondary-disabled-color !important;
+}
+
+.rlight-btn-body-secondary:not(:disabled):hover {
+  background: $rlight-btn-body-secondary-not-disabled-hover-background !important;
+  color: $rlight-btn-body-secondary-not-disabled-hover-color !important;
+}
+
+.rlight-btn-body-secondary {
+  background: $rlight-btn-body-secondary-background !important;
+  color: $rlight-btn-body-secondary-color !important;
+}
+
+.rlight-btn-body:disabled .rlight-btn-children-wrapper-secondary {
+  color: $rlight-btn-body-disabled !important;
+}
+
+.rlight-btn-children-wrapper-secondary {
+  color: $rlight-btn-children-wrapper-secondary !important;
+}
+
+.rlight-btn-body:disabled span .rlight-btn-children-body-secondary {
+  color: $rlight-btn-body-disabled-body-secondary !important;
+}
+
+.rlight-btn-children-body-secondary {
+  color: $rlight-btn-body-secondary-color !important;
+}
+
+

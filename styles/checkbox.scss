@@ -1,0 +1,14 @@
+@import "./themes/default/index.scss";
+
+.rlight-checkbox-wrapper {
+  input[type=checkbox]:focus {
+    outline: none;
+    box-shadow: 0 0 6px $rlight-checkbox-box-shadow;
+  }
+}
+
+.rlight-checkbox-space {
+  padding-left: .3em;
+}
+
+

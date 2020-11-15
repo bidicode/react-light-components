@@ -1,0 +1,11 @@
+@import "./colors.scss";
+
+.rlight-modal-body {
+  background-color: $rlight-modal-body-background-color !important;
+  background-color: $rlight-modal-body-background-color-a !important;
+}
+
+.rlight-modal-content {
+  background-color: $rlight-modal-content-background-color !important;
+  border: 1px solid $rlight-modal-content-border-color !important;
+}
