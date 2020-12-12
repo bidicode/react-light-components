@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Test from './../test';
+import Components from '../components';
 
 export default class DefaultTheme extends React.Component {
   constructor(props) {
@@ -13,7 +13,7 @@ export default class DefaultTheme extends React.Component {
 
   public render() {
     return (
-      <Test theme="Default"/>
+      <Components theme="Default"/>
     );
   }
 }

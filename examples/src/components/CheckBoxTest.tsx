@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Bootstrap, Checkbox } from '../../src';
+import { Bootstrap, Checkbox } from '../../../src';
 
 const { Col, Row } = Bootstrap;
 

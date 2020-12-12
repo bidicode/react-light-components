@@ -5,8 +5,6 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const config = require('./webpack.config');
 
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
-
 module.exports = merge(config, {
   mode: 'production',
   entry: {
@@ -26,7 +24,6 @@ module.exports = merge(config, {
     new MiniCssExtractPlugin({
       filename: 'react-light-components.min.css',
       chunkFilename: 'react-light-components-[id].min.css'
-    }),
-    new BundleAnalyzerPlugin({ analyzerPort: 8888, openAnalyzer: false })
+    })
   ]
 });
