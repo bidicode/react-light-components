@@ -27,6 +27,7 @@
     "typescript"
   ],
   "scripts": {
+    "analyze": "rm -rf dist && tsc --project tsconfig-build.json && tsc --project tsconfig-build.json --target es6 -m es6 --outDir dist/esm --moduleResolution node && webpack --config=webpack.config.analyze.js",
     "release": "rm -rf dist && tsc --project tsconfig-build.json && tsc --project tsconfig-build.json --target es6 -m es6 --outDir dist/esm --moduleResolution node && webpack --config=webpack.config.release.js",
     "examples": "webpack-dev-server --config=webpack.config.examples.js",
     "test": "jest",
