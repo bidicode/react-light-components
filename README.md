@@ -17,11 +17,7 @@ A lightweight React Web Components Library *(BETA)* with the following design:
 
 # Screenshoots
 
-## Default theme
-
 <img src="./demo/examples_default.png" />
-
-## Dracula theme
 
 <img src="./demo/examples_dracula.png" />
 
