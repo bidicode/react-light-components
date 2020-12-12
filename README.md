@@ -15,6 +15,16 @@ A lightweight React Web Components Library *(BETA)* with the following design:
 
 *ATTENTION:* This project is currently on development (BETA) and it's not ready for production yet as API may change due to improvements on next releases. We highly recommend to test this in POCs, prototypes and small projects that might not be used in production in a short term. We are working hard to make it ready for production soon. Feedbacks are really welcome! :)
 
+# Screenshoots
+
+## Default theme
+
+<img src="./demo/examples_default.png" />
+
+## Dracula theme
+
+<img src="./demo/examples_dracula.png" />
+
 # Getting Started *(BETA)*
 
 ## Option #1: [npm](https://www.npmjs.com/package/react-light-components)
@@ -56,6 +66,10 @@ export default class App extends React.Component {
 + Download as a manual dependency:
   + [Download](https://github.com/bidicode/react-light-components/releases/download/v0.0.1/dist.zip)
   + Unzip dist.zip into your JS and styles 
+
+# APIs and customisations
+
+The documentation regarding APIs and customisations is currently in progress, in other hand the `examples` directory contains some usage samples about the features implemented and it's helpful to understand in details how to use it.
 
 # Contributors: Getting Started
 
