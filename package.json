@@ -28,11 +28,13 @@
   ],
   "scripts": {
     "release": "rm -rf dist && tsc && tsc --target es6 -m es6 --outDir dist/esm --moduleResolution node && webpack --config=webpack.config.release.js",
-    "dev": "webpack-dev-server --config=webpack.config.dev.js",
+    "examples": "webpack-dev-server --config=webpack.config.examples.js",
     "lint": "tslint -c tslint.json 'src/**/*.{ts,tsx}'",
     "lint-dev": "tslint -c tslint.json 'dev/**/*.{ts,tsx}'"
   },
-  "dependencies": {},
+  "dependencies": {
+    "@testing-library/react": "^11.2.2"
+  },
   "peerDependencies": {
     "react": "^16.9.0",
     "react-dom": "^16.9.0"

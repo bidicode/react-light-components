@@ -17,4 +17,4 @@ A lightweight React Web Components Library *(BETA)* with the following design:
 
 + `nvm install v14.15.0` then `nvm use v14.15.0`
 + `npm install`
-+ `npm run dev`
++ `npm run examples`

@@ -11,11 +11,11 @@ const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPl
 module.exports = merge(config, {
   mode: 'development',
   output: {
-    path: path.join(__dirname, 'dist/dev'),
-    filename: `react-light-components-dev.js`,
+    path: path.join(__dirname, 'dist/examples'),
+    filename: `react-light-components-examples.js`,
     chunkFilename: '[name]-bundle.js',
   },
-  entry: './dev/index.tsx',
+  entry: './examples/index.tsx',
   devtool: 'source-map',
   plugins: [
     new CleanWebpackPlugin(),
@@ -23,7 +23,7 @@ module.exports = merge(config, {
       filename: '[name].css',
     }),
     new HtmlWebPackPlugin({
-      template: './dev/index.html',
+      template: './examples/index.html',
       filename: 'index.html'
     }),
     new BundleAnalyzerPlugin({ analyzerPort: 8800, openAnalyzer: false })
@@ -31,7 +31,7 @@ module.exports = merge(config, {
   devServer: {
     inline: true,
     port: 8000,
-    contentBase: './dev/dist',
+    contentBase: './dist/examples',
     open: true
   }
 });

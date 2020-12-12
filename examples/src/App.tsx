@@ -1,8 +1,8 @@
 import React from 'react';
 import { HashRouter, Route, Switch } from 'react-router-dom';
 
-import './../styles/index.scss';
-import './styles/dev.scss';
+import './../../styles/index.scss';
+import '../styles/dev.scss';
 
 import DefaultTheme from './themes/default';
 import DraculaTheme from './themes/dracula';
