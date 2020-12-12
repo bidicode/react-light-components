@@ -15,7 +15,7 @@ A lightweight React Web Components Library *(BETA)* with the following design:
 
 *ATTENTION:* This project is currently on development (BETA) and it's not ready for production yet as API may change due to improvements on next releases. We highly recommend to test this in POCs, prototypes and small projects that might not be used in production in a short term. We are working hard to make it ready for production soon. Feedbacks are really welcome! :)
 
-# Screenshoots
+# Screenshots
 
 <img src="./demo/examples_default.png" />
 
