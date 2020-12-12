@@ -4,7 +4,7 @@ on: [pull_request]
 
 jobs:
   test:
-    name: 🥁 Test
+    name: 🥁 Test & Coverage
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
@@ -12,21 +12,8 @@ jobs:
       with:
         node-version: '14'
     - run: npm ci
-    - run: npm run test
-  coverage:
-    needs: [ test ]
-    name: coverage
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@master
-    - uses: actions/setup-node@master
-      with:
-        node-version: '12'
-    - run: npm install -g yarn
-    - run: yarn install
-    - run: yarn build
     - uses: paambaati/codeclimate-action@v2.7.5
       env:
         CC_TEST_REPORTER_ID: 7f3f06374374003db007423e516d9faa940cb2af67fae53ae8a9acb1525475e3
       with:
-        coverageCommand: yarn coverage
+        coverageCommand: npm run test
