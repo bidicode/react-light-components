@@ -52,15 +52,15 @@ export default class App extends React.Component {
 ## Option #2: [use from CDN](https://cdn.jsdelivr.net)
 
 ### 🚀 CDN URLs
-  + JS: `https://cdn.jsdelivr.net/npm/react-light-components@0.0.1/dist/bundle/react-light-components.min.js`
-  + CSS: `https://cdn.jsdelivr.net/npm/react-light-components@0.0.1/dist/bundle/react-light-components.min.css`
+  + JS: `https://cdn.jsdelivr.net/npm/react-light-components@0.0.2/dist/bundle/react-light-components.min.js`
+  + CSS: `https://cdn.jsdelivr.net/npm/react-light-components@0.0.2/dist/bundle/react-light-components.min.css`
 
 ## Option #3: [Download](https://www.npmjs.com/package/react-light-components)
 
 ### 🚀 Download bundle
 
 + Download as a manual dependency:
-  + [Download](https://github.com/bidicode/react-light-components/releases/download/v0.0.1/dist.zip)
+  + [Download](https://github.com/bidicode/react-light-components/releases/download/v0.0.2/dist.zip)
   + Unzip dist.zip into your JS and styles 
 
 # APIs and customisations
