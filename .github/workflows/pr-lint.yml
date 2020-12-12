@@ -12,4 +12,6 @@ jobs:
       with:
         node-version: '14'
     - run: npm ci
-    - run: npm run test
+    - run: npm run lint-src
+    - run: npm run lint-test
+    - run: npm run lint-examples
