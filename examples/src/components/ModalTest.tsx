@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Bootstrap, Button, Modal } from '../../src';
+import { Bootstrap, Button, Modal } from '../../../src';
 import TextInputTest from './TextInputTest';
 
 const { Col, Row } = Bootstrap;

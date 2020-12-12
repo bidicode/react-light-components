@@ -21,9 +21,9 @@ export default class Button extends BaseButtonComponent<Props, {}> {
   public getClassNames = (prefix: string) => {
     const classNames = this.getVariants(prefix);
     if (this.props.isCompact) {
-      return `${classNames} rlight-btn-compact`;
+      return this.getCustomClassName(`${classNames} rlight-btn-compact`, this.props.className);
     }
-    return classNames;
+    return this.getCustomClassName(classNames, this.props.className);
   }
 
   public render() {

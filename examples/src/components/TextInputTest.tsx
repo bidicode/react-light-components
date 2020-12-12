@@ -1,5 +1,5 @@
 import React from 'react';
-import { Bootstrap, TextInput } from '../../src';
+import { Bootstrap, TextInput } from '../../../src';
 
 const { Col, Row } = Bootstrap;
 
