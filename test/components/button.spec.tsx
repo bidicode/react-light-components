@@ -1,6 +1,7 @@
-import React from 'react';
 import { render } from '@testing-library/react';
-import '@testing-library/jest-dom'
+import React from 'react';
+
+import '@testing-library/jest-dom';
 
 import Button from '../../src/components/Button';
 
@@ -22,4 +23,4 @@ describe('Test button component', () => {
     expect(button).toHaveAttribute('id', 'my-id');
     expect(button).toHaveAttribute('name', 'my-button');
   });
-})
+});
