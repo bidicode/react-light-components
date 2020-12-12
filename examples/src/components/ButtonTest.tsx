@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Bootstrap, Button } from './../../src';
+import { Bootstrap, Button } from '../../../src';
 
 const { Col, Row } = Bootstrap;
 

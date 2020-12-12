@@ -1,8 +1,8 @@
 import React from 'react';
-import './../../styles/themes/dracula/custom.scss';
-import './../../styles/themes/dracula/index.scss';
+import './../../../styles/themes/dracula/custom.scss';
+import './../../../styles/themes/dracula/index.scss';
 
-import Test from '../test';
+import Components from '../components';
 
 export default class DraculaTheme extends React.Component {
   constructor(props) {
@@ -15,7 +15,7 @@ export default class DraculaTheme extends React.Component {
 
   public render() {
     return (
-      <Test theme="Dracula"/>
+      <Components theme="Dracula"/>
     );
   }
 }

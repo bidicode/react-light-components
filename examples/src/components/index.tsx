@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Bootstrap } from './../../src';
+import { Bootstrap } from '../../../src';
 import ButtonTest from './ButtonTest';
 import CheckBoxTest from './CheckBoxTest';
 import ModalTest from './ModalTest';
