@@ -3,8 +3,8 @@ name: Test
 on: [pull_request]
 
 jobs:
-  lint:
-    name: 🥁 Test
+  test:
+    name: 🥁 Test & Coverage
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
@@ -12,4 +12,8 @@ jobs:
       with:
         node-version: '14'
     - run: npm ci
-    - run: npm run test
+    - uses: paambaati/codeclimate-action@v2.7.5
+      env:
+        CC_TEST_REPORTER_ID: 7f3f06374374003db007423e516d9faa940cb2af67fae53ae8a9acb1525475e3
+      with:
+        coverageCommand: npm run test
