@@ -1,5 +1,5 @@
 import React from 'react';
-import { Bootstrap, TextInput } from '../../../src';
+import { Bootstrap, CurrencyInput, TextInput } from '../../../src';
 
 const { Col, Row } = Bootstrap;
 
@@ -9,6 +9,9 @@ interface Props {
 
 interface State {
   name: string;
+  amount: string;
+  currency: string;
+  locale: string;
   password: string;
   quantity: string;
 }
@@ -20,12 +23,61 @@ export default class TextInputTest extends React.Component<Props, State> {
       name: '',
       password: '',
       quantity: '',
+      amount: '',
+      currency: 'USD',
+      locale: 'en'
     };
   }
 
   public render() {
     return (
       <React.Fragment>
+        <Row>
+          <Col col={this.props.col}>
+            <TextInput
+              id="currency-code-id"
+              label="Currency Code"
+              name="currency-code"
+              placeholder="The currency code (e.g.: BRL)"
+              value={this.state.currency}
+              onChange={(value) => this.setState({ currency: value })}
+              isRequired={true}
+            />
+          </Col>
+          <Col col={this.props.col}>
+            <TextInput
+              id="locale-id"
+              label="Locale"
+              name="locale"
+              placeholder="The locale based on your region (e.g.: pt-br)"
+              value={this.state.locale}
+              onChange={(value) => this.setState({ locale: value })}
+              isRequired={true}
+            />
+          </Col>
+        </Row>
+        <Row>
+          <Col col={this.props.col}>
+            <CurrencyInput
+              id="currency-id"
+              label="Currency"
+              name="currency"
+              currency={this.state.currency}
+              locale={this.state.locale}
+              placeholder="Currency"
+              value={this.state.amount}
+              onChange={(value) => this.setState({ amount: value })}
+              isRequired={true}
+            />
+          </Col>
+          <Col col={this.props.col}>
+            {this.state.amount}
+          </Col>
+        </Row>
+        <Row>
+          <Col col={this.props.col}>
+          </Col>
+        </Row>
         <Row>
           <Col col={this.props.col}>
             <TextInput
