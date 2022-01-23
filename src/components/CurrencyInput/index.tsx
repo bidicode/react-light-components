@@ -2,7 +2,13 @@ import React, { RefObject } from 'react';
 import BaseInputComponent, { BaseInputProps } from '../../standard/BaseInputComponent';
 
 import Label from '../Label';
-import { CurrencyOptions, formatCurrency, getSymbol } from './currencyHelper';
+import { CurrencyOptions, formatCurrency, getAmount, getSymbol } from './currencyHelper';
+
+interface OnChangeResponse {
+  amount: number;
+  formatted: string;
+  symbol: string;
+}
 
 interface Props extends BaseInputProps {
   currency: string;
@@ -10,39 +16,41 @@ interface Props extends BaseInputProps {
   isRequired?: boolean;
   label?: string;
   isEmptyLabel?: boolean;
-  onChange?: (value: string) => void;
+  value?: never;
+  amount: number;
+  onChange?: (OnChangeResponse) => void;
 }
 
 interface State {
   value: string;
+  amount: number;
 }
 
 export default class CurrencyInput extends BaseInputComponent<Props, State> {
   constructor(props) {
     super(props);
     this.getCurrencyOptions = this.getCurrencyOptions.bind(this);
-    this.formatWithGrouping = this.formatWithGrouping.bind(this);
-    this.formatWithoutGrouping = this.formatWithoutGrouping.bind(this);
+    this.format = this.format.bind(this);
     this.onChange = this.onChange.bind(this);
 
+    const amount = (this.props.amount || 0);
     this.state = {
-      value: ''
+      value: amount.toFixed(2),
+      amount
     };
   }
 
-  public componentDidUpdate(prevProps: Readonly<Props>) {
-    if (!this.state.value) { return; }
-
-    if (this.props.currency && this.props.currency !== prevProps.currency ||
-          this.props.locale && this.props.locale !== prevProps.locale) {
-      this.formatWithGrouping();
-    }
+  public componentWillMount() {
+    this.format(this.state.value, { useGrouping: this.props.disabled });
   }
 
-  public componentDidMount() {
-    this.setState({
-      value: this.props.value
-    });
+  public componentDidUpdate(prevProps: Readonly<Props>) {
+    if (this.props.currency && this.props.currency !== prevProps.currency ||
+          this.props.locale && this.props.locale !== prevProps.locale ||
+          this.props.amount !== prevProps.amount) {
+      const value = (this.props.amount || 0).toFixed(2);
+      this.format(value, { useGrouping: this.props.disabled });
+    }
   }
 
   public render() {
@@ -67,13 +75,13 @@ export default class CurrencyInput extends BaseInputComponent<Props, State> {
             value={this.state.value}
             aria-label={this.props.ariaLabel || this.props.label}
             aria-required={this.props.ariaRequired || this.props.isRequired}
-            onFocus={() => this.formatWithoutGrouping(this.state.value)}
+            onFocus={() => this.format(this.state.value)}
             onChange={(e: React.ChangeEvent<any>) => {
               if (e.target) {
-                this.formatWithoutGrouping(e.target.value);
+                this.format(e.target.value, { triggerOnChange: true });
               }
             }}
-            onBlur={this.formatWithGrouping}
+            onBlur={() => this.format(this.state.value, { useGrouping: true })}
             onClick={this.props.onClick}
             ref={this.props.ref}
           />
@@ -91,22 +99,27 @@ export default class CurrencyInput extends BaseInputComponent<Props, State> {
 
   private onChange(): void {
     if (this.props.onChange) {
-      this.props.onChange(this.state.value);
+      this.props.onChange({
+        amount: this.state.amount,
+        formatted: formatCurrency(this.state.value, {
+          useGrouping: true,
+          ...this.getCurrencyOptions()
+        }),
+        symbol: getSymbol(this.getCurrencyOptions())
+      });
     }
   }
 
-  private formatWithGrouping(): void {
+  private format(value: string, options?: {
+    useGrouping?: boolean;
+    triggerOnChange?: boolean;
+  }): void {
     this.setState({
-      value: formatCurrency(this.state.value, {
-        useGrouping: true,
+      value: formatCurrency(value, {
+        useGrouping: !!options?.useGrouping,
         ...this.getCurrencyOptions()
-      })
-    }, this.onChange);
-  }
-
-  private formatWithoutGrouping(value: string): void {
-    this.setState({
-      value: formatCurrency(value, this.getCurrencyOptions())
-    }, this.onChange);
+      }),
+      amount: getAmount(value)
+    }, !!options?.triggerOnChange ? this.onChange : undefined);
   }
 }

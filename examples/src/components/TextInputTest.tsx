@@ -9,7 +9,7 @@ interface Props {
 
 interface State {
   name: string;
-  amount: string;
+  amount: number;
   currency: string;
   locale: string;
   password: string;
@@ -23,7 +23,7 @@ export default class TextInputTest extends React.Component<Props, State> {
       name: '',
       password: '',
       quantity: '',
-      amount: '',
+      amount: 10,
       currency: 'USD',
       locale: 'en'
     };
@@ -65,13 +65,22 @@ export default class TextInputTest extends React.Component<Props, State> {
               currency={this.state.currency}
               locale={this.state.locale}
               placeholder="Currency"
-              value={this.state.amount}
-              onChange={(value) => this.setState({ amount: value })}
+              amount={this.state.amount}
+              onChange={({ amount }) => this.setState({ amount })}
               isRequired={true}
             />
           </Col>
           <Col col={this.props.col}>
-            {this.state.amount}
+            <CurrencyInput
+              id="currency-disabled-id"
+              label="Currency Disabled"
+              name="currency-disabled"
+              currency={this.state.currency}
+              locale={this.state.locale}
+              placeholder="Currency Disabled"
+              amount={this.state.amount}
+              disabled={true}
+            />
           </Col>
         </Row>
         <Row>

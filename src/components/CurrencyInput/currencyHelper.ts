@@ -19,7 +19,7 @@ function getDigits(value: string): string {
   return value.replace(/[^0-9]/g, '').replace(/^0+/, '');
 }
 
-function getAmount(value: string): number {
+export function getAmount(value: string): number {
   let amount;
   const digits = getDigits(value);
   if (digits.length === 2) {
