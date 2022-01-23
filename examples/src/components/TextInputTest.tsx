@@ -75,8 +75,7 @@ export default class TextInputTest extends React.Component<Props, State> {
           </Col>
         </Row>
         <Row>
-          <Col col={this.props.col}>
-          </Col>
+          <Col col={this.props.col}/>
         </Row>
         <Row>
           <Col col={this.props.col}>
